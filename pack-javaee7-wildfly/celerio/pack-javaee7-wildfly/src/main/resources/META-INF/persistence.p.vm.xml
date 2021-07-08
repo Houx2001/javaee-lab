@@ -56,6 +56,9 @@ $output.resource("META-INF", "persistence.xml")##
 			<!-- Hibernate Search -->
 			<property name="hibernate.search.model_mapping" value="${Search.packageName}.SearchMappingFactory" />
 			<property name="hibernate.search.default.directory_provider" value="ram" />
+			
+			<!-- Hibernate Search bug fix by wildfly -->
+			<property name="wildfly.jpa.hibernate.search.module" value="org.hibernate.search.orm:main"/> 
 #end
 #if($project.isAuditLogPresent())
 			<!-- not tested yet-->
